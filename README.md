@@ -1,16 +1,30 @@
-# smart_expense_tracker_with_ai_assistant
+# 💸 Smart Expense Tracker with AI Assistant
 
-A new Flutter project.
+A powerful and intuitive Flutter app that helps you manage your finances effectively. Track your expenses, analyze spending patterns with interactive charts, and get smart budgeting tips through an integrated AI assistant powered by OpenAI.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🔐 **Firebase Authentication** (Sign up, Login, Logout)
+- 💰 **Add, View, and Filter Expenses**
+- 📊 **Analytics Dashboard** (Pie charts, Category-wise filters, Date range: Weekly, Monthly, Yearly)
+- 💬 **AI Assistant Chat** (Smart financial suggestions & budget tips using OpenAI GPT)
+- ☁️ **Firestore Backend Integration** for persistent storage
+- 📁 **Secure API Key Handling** using `flutter_dotenv`
+- 🧭 **Bottom Navigation** for Dashboard ↔ Analytics ↔ Settings ↔ Chat
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📱 Screenshots
+Will be added later on completion
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/smart-expense-tracker-ai.git
+cd smart-expense-tracker-ai
