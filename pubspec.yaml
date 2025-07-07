@@ -43,7 +43,13 @@ dependencies:
   charts_flutter: ^0.12.0
   fl_chart: ^1.0.0
   intl: ^0.17.0
+<<<<<<< HEAD
 >>>>>>> 819fc54 (third)
+=======
+  pie_chart: ^5.4.0
+  chat_gpt_sdk: ^3.1.5
+  flutter_dotenv: ^5.2.1
+>>>>>>> 847e201 (fifth)
 
 dev_dependencies:
   flutter_test:

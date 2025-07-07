@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:smart_expense_tracker_with_ai_assistant/providers/ai_chat_provider.dart';
 import 'package:smart_expense_tracker_with_ai_assistant/providers/auth_providers.dart';
 import 'package:smart_expense_tracker_with_ai_assistant/providers/expense_provider.dart';
+import 'package:smart_expense_tracker_with_ai_assistant/screens/add_expense_screen.dart';
+import 'package:smart_expense_tracker_with_ai_assistant/screens/ai_chat_screen.dart';
+import 'package:smart_expense_tracker_with_ai_assistant/screens/analytics_screen.dart';
 import 'package:smart_expense_tracker_with_ai_assistant/screens/dashboard_screen.dart';
 import 'package:smart_expense_tracker_with_ai_assistant/screens/login.dart';
+import 'package:smart_expense_tracker_with_ai_assistant/screens/main_navigation_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:smart_expense_tracker_with_ai_assistant/screens/settings_screen.dart';
+import 'package:smart_expense_tracker_with_ai_assistant/screens/signup.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // 🔥 Initialize Firebase
-
+  await Firebase.initializeApp();
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -20,14 +28,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AuthProvider()),     // 👤 Auth
-        ChangeNotifierProvider(create: (_) => ExpenseProvider()),  // 💰 Expense
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => ExpenseProvider()),
+        ChangeNotifierProvider(create: (_) => AIChatProvider()),
       ],
       child: MaterialApp(
         title: 'Smart Expense Tracker',
         theme: ThemeData(primarySwatch: Colors.indigo),
         debugShowCheckedModeBanner: false,
-        home: const RootPage(), // ⛳ Entry logic
+        home: const RootPage(),
+        routes: {
+          '/main': (context) => const MainScreen(),
+          '/login': (context) => const LoginScreen(),
+          '/signup': (context) => const SignupScreen(),
+          '/analytics': (context) => const AnalyticsScreen(),
+          '/add-expense': (context) => const AddExpenseScreen(),
+          '/settings': (context) => const SettingsScreen(),
+          '/chat': (context) => const ChatScreen(),
+        },// ⛳ Entry logic
       ),
     );
   }
@@ -48,9 +66,9 @@ class RootPage extends StatelessWidget {
             body: Center(child: CircularProgressIndicator()),
           );
         } else if (snapshot.hasData) {
-          return const DashboardScreen(); // ✅ User logged in
+          return const MainScreen();
         } else {
-          return const LoginScreen(); // 🚪 Show login screen
+          return const LoginScreen();
         }
       },
     );
