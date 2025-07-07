@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 💸 Smart Expense Tracker with AI Assistant
 
 A powerful and intuitive Flutter app that helps you manage your finances effectively. Track your expenses, analyze spending patterns with interactive charts, and get smart budgeting tips through an integrated AI assistant powered by OpenAI.
@@ -28,3 +29,6 @@ Will be added later on completion
 ```bash
 git clone https://github.com/your-username/smart-expense-tracker-ai.git
 cd smart-expense-tracker-ai
+=======
+# Smart-Expense-Tracker-with-AI-Assistant
+>>>>>>> 115281c (Initial commit)
