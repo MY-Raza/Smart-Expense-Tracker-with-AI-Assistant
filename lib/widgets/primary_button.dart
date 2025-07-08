@@ -12,12 +12,11 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.orangeAccent.shade100,
+    return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         onPressed: onPressed,
-        child: Text(label),
+        child: Text(label,style: TextStyle(color: Colors.orangeAccent),),
       ),
     );
   }

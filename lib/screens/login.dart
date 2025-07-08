@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smart_expense_tracker_with_ai_assistant/screens/main_navigation_screen.dart';
 
 import '../providers/auth_providers.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/primary_button.dart';
+import 'forgot_password_screen.dart';
 import 'signup.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -76,6 +78,23 @@ class _LoginScreenState extends State<LoginScreen> {
               labelText: 'Password',
               obscureText: true,
             ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ForgotPasswordScreen()),
+                );
+              },
+              child: const Text(
+                'Forgot Password?',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
             const SizedBox(height: 20),
             _isLoading
                 ? const CircularProgressIndicator()
@@ -88,6 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   emailController.text,
                   passwordController.text,
                 );
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));
 
                 setState(() => _isLoading = false);
 
