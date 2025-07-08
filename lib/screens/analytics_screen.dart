@@ -20,14 +20,24 @@ class AnalyticsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Analytics'),
+        title: const Text('Analytics',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
         centerTitle: true,
+        backgroundColor: Colors.orangeAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            SizedBox(height: 20,),
+            Text('Analyse Your Expenses!!',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 18),),
+            SizedBox(height: 30,),
             ToggleButtons(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderWidth: 5,
+              fillColor: Colors.transparent,
+              selectedColor: Colors.blueAccent,
+              selectedBorderColor: Colors.orangeAccent,
+              disabledBorderColor: Colors.grey,
               isSelected: [
                 selectedRange == DateRangeFilter.weekly,
                 selectedRange == DateRangeFilter.monthly,
@@ -63,6 +73,8 @@ class AnalyticsScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
+            Text('Chart For Your Expenses',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black),),
+            SizedBox(height: 20,),
             if (pieData.isEmpty)
               const Text('No data for selected range.')
             else
@@ -77,7 +89,7 @@ class AnalyticsScreen extends StatelessWidget {
               ),
             const SizedBox(height: 16),
             Text(
-              'Total Expenses: ₹${total.toStringAsFixed(2)}',
+              'Total Expenses: Rs. ${total.toStringAsFixed(2)}',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ],

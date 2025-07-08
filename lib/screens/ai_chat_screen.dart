@@ -12,8 +12,9 @@ class ChatScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AI Assistant'),
+        title: const Text('AI Assistant',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
         centerTitle: true,
+        backgroundColor: Colors.orangeAccent,
       ),
       body: Column(
         children: [

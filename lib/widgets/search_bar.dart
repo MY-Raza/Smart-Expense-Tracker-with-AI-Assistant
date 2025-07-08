@@ -12,10 +12,10 @@ class SearchBarWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: TextField(
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           hintText: 'Search expenses...',
           prefixIcon: Icon(Icons.search),
-          border: OutlineInputBorder(),
+          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
         ),
         onChanged: provider.setSearchQuery,
       ),

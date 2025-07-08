@@ -16,7 +16,7 @@ class AuthProvider with ChangeNotifier {
   User? get user => _user;
   Stream<User?> get authStateChanges => _auth.authStateChanges();
 
-  // ✅ Sign In
+
   Future<bool> signIn(String email, String password) async {
     try {
       _user = await _authService.signIn(email, password);

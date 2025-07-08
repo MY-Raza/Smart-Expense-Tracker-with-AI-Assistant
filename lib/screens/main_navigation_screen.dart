@@ -27,30 +27,38 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.lightBlueAccent,
+        fixedColor: Colors.lightBlueAccent,
+        unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard),
             label: 'Dashboard',
+            backgroundColor: Colors.orangeAccent
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.analytics),
             label: 'Analytics',
+              backgroundColor: Colors.orangeAccent
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
             label: 'AI Assitant',
+              backgroundColor: Colors.orangeAccent
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
+              backgroundColor: Colors.orangeAccent
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.orangeAccent,
         onPressed: () => Navigator.pushNamed(context, '/add-expense'),
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add,color: Colors.blueAccent,),
       ),
     );
   }

@@ -13,12 +13,13 @@ class ExpenseTile extends StatelessWidget {
     final formattedAmount = NumberFormat.simpleCurrency().format(expense.amount);
 
     return Card(
+      color: Colors.grey.shade100,
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: Colors.indigo.shade100,
+          backgroundColor: Colors.orangeAccent.shade100,
           child: Text(
             expense.category.substring(0, 1).toUpperCase(),
             style: const TextStyle(fontWeight: FontWeight.bold),

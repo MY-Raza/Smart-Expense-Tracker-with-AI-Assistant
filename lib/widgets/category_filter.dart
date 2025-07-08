@@ -13,6 +13,7 @@ class CategoryFilter extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: DropdownButton<String>(
+        dropdownColor: Colors.grey.shade100,
         isExpanded: true,
         value: provider.selectedCategory,
         hint: const Text('Filter by Category'),
