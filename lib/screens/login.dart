@@ -48,11 +48,25 @@ class _LoginScreenState extends State<LoginScreen> {
     final authProvider = Provider.of<AuthProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      appBar: AppBar(title: const Text('Login',style: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.black
+      ),),
+      centerTitle: true,
+        backgroundColor: Colors.orangeAccent,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            SizedBox(height: 40,),
+            Text('Track Your Expenses with AI Assistant!!',style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+              fontStyle: FontStyle.italic
+            ),),
+            SizedBox(height: 20,),
             CustomTextField(
               controller: emailController,
               labelText: 'Email',
@@ -92,7 +106,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   MaterialPageRoute(builder: (_) => const SignupScreen()),
                 );
               },
-              child: const Text("Don't have an account? Sign up"),
+              child: const Text("Don't have an account? Sign up",style: TextStyle(
+                color: Colors.black,fontWeight: FontWeight.w400,fontSize: 14
+              ),),
             ),
           ],
         ),

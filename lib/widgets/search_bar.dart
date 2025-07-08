@@ -14,7 +14,7 @@ class SearchBarWidget extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: 'Search expenses...',
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: Icon(Icons.search,color: Colors.orangeAccent,),
           border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
         ),
         onChanged: provider.setSearchQuery,

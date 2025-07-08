@@ -39,7 +39,11 @@ class DashboardScreen extends StatelessWidget {
               const CategoryFilter(),
               const SearchBarWidget(),
               const SizedBox(height: 8),
-              const ExpenseChart(), // Pie chart based on category
+              Text('Visualise Data Via Categories',style: TextStyle(
+                color: Colors.black,fontWeight: FontWeight.w500,fontSize: 18
+              ),),
+              const SizedBox(height: 8),
+              const ExpenseChart(),
               const Divider(),
               Expanded(
                 child: expenses.isEmpty

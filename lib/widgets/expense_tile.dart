@@ -10,8 +10,7 @@ class ExpenseTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formattedDate = DateFormat.yMMMd().format(expense.date);
-    final formattedAmount = NumberFormat.simpleCurrency().format(expense.amount);
-
+    String result = expense.amount.toString();
     return Card(
       color: Colors.grey.shade100,
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
@@ -28,7 +27,7 @@ class ExpenseTile extends StatelessWidget {
         title: Text(expense.title),
         subtitle: Text('$formattedDate • ${expense.category}'),
         trailing: Text(
-          formattedAmount,
+          'Rs. '+result,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.indigo,
