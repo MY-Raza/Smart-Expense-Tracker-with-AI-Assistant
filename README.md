@@ -18,7 +18,29 @@ A powerful and intuitive Flutter app that helps you manage your finances effecti
 ---
 
 ## 📱 Screenshots
-Will be added later on completion
+### Login Screen  
+![Login Screen](assets/screenshots/login.jpg)
+
+### Signup Screen
+![Signup Screen](assets/screenshots/signup.jpg)
+
+### Reset Password Screen
+![Reset Password Screen](assets/screenshots/passwordreset.jpg)
+
+### Dashboard  
+![Dashboard](assets/screenshots/dashboard.jpg)
+
+### Analytics Screen
+![Analytics Screen](assets/screenshots/analytics.jpg)
+
+### AI Assistant Screen
+![AI Assistant Screen](assets/screenshots/ai_assistant.jpg)
+
+### Add Expense Screen
+![AI Assistant Screen](assets/screenshots/add_expense.jpg)
+
+### Settings Screen
+![Settings Screen](assets/screenshots/settings.jpg)
 
 ---
 
