@@ -56,27 +56,37 @@ class ExpenseProvider with ChangeNotifier {
 
   Future<void> addExpense(String title, String category, double amount) async {
     final uid = _auth.currentUser?.uid;
-    if (uid == null) return;
+    if (uid == null) {
+      print("❌ User not logged in!");
+      return;
+    }
 
-    final doc = await _firestore.collection('expenses').add({
-      'userId': uid,
-      'title': title,
-      'category': category,
-      'amount': amount,
-      'createdAt': FieldValue.serverTimestamp(),
-    });
+    try {
+      final doc = await _firestore.collection('expenses').add({
+        'userId': uid,
+        'title': title,
+        'category': category,
+        'amount': amount,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
 
-    final newExpense = ExpenseModel(
-      id: doc.id,
-      title: title,
-      category: category,
-      amount: amount,
-      date: DateTime.now(),
-    );
+      print("✅ Expense added with ID: ${doc.id}");
 
-    _allExpenses.insert(0, newExpense);
-    _applyFilters();
+      final newExpense = ExpenseModel(
+        id: doc.id,
+        title: title,
+        category: category,
+        amount: amount,
+        date: DateTime.now(),
+      );
+
+      _allExpenses.insert(0, newExpense);
+      _applyFilters();
+    } catch (e) {
+      print("❌ Error saving expense: $e");
+    }
   }
+
 
   Future<void> deleteExpense(String id) async {
     await _firestore.collection('expenses').doc(id).delete();

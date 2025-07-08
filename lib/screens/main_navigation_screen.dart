@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _screens = const [
     DashboardScreen(),
-    AddExpenseScreen(),
+    AnalyticsScreen(),
     ChatScreen(),
     SettingsScreen()
   ];
