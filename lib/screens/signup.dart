@@ -6,9 +6,14 @@ import '../../widgets/custom_text_field.dart';
 import '../../widgets/primary_button.dart';
 import '../providers/auth_providers.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     final emailController = TextEditingController();
@@ -60,6 +65,7 @@ class SignupScreen extends StatelessWidget {
               PrimaryButton(
                 label: 'Register',
                 onPressed: () async {
+                  print('hello');
                   final success = await authProvider.signUp(
                     emailController.text,
                     passwordController.text,

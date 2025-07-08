@@ -12,23 +12,13 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Container(
-        width: double.infinity,
-        height: 50,
-        decoration: BoxDecoration(
-          color: Colors.orangeAccent,
-          borderRadius: BorderRadius.all(Radius.circular(40))
-        ),
-        child: Center(child: Text(label,style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
-          color: Colors.black
-        ),)),
+    return Container(
+      color: Colors.orangeAccent.shade100,
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        child: Text(label),
       ),
-      onTap: (){
-        onPressed;
-      },
     );
   }
 }
